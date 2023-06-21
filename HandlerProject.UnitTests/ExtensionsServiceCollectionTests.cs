@@ -10,9 +10,6 @@ public class ExtensionsServiceCollectionTests
     public ExtensionsServiceCollectionTests()
     {
         var services = new ServiceCollection();
-        services.AddLogging();
-
-        // Act
         services.AddMediatrHandlersExplicitly();
         _serviceProvider = services.BuildServiceProvider();
     }
