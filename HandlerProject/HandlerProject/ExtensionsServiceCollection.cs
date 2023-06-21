@@ -5,9 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace HandlerProject;
 
-public static class ServiceCollectionExtensions
+public static class ExtensionsServiceCollection
 {
-    public static IServiceCollection AddMediatrHandlers(this IServiceCollection services)
+    public static IServiceCollection AddMediatrHandlersExplicitly(this IServiceCollection services)
     {
         var assembly = typeof(CountFruitRequestHandler<>).GetTypeInfo().Assembly;
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));

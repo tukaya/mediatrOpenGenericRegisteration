@@ -4,16 +4,16 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace HandlerProject.UnitTests;
 
-public class DependencyResolutionTests
+public class ExtensionsServiceCollectionTests
 {
     private readonly IServiceProvider _serviceProvider;
-    public DependencyResolutionTests()
+    public ExtensionsServiceCollectionTests()
     {
         var services = new ServiceCollection();
         services.AddLogging();
 
         // Act
-        services.AddMediatrHandlers();
+        services.AddMediatrHandlersExplicitly();
         _serviceProvider = services.BuildServiceProvider();
     }
 
